@@ -1,18 +1,14 @@
 name: Django-app workflow
-
 on: [push]
-
 jobs:
   tests:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
-
     - name: Install dependencies
       run: | 
         # обновление pip
@@ -21,7 +17,6 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         # установка зависимостей
         pip install -r requirements.txt 
-
     - name: Test with flake8 and django tests
       run: |
         # запуск проверки проекта по flake8
@@ -30,4 +25,3 @@ jobs:
         cd infra_project/
         # запустить написанные разработчиком тесты
         python manage.py test
-        # запустить написанные разработчиком тесты
