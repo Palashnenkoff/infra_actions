@@ -67,4 +67,4 @@ jobs:
           sudo docker pull palashnenkoff/infra
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 palash/infra
+          sudo docker run --rm -d -p 5000:5000 palashnenkoff/infra
